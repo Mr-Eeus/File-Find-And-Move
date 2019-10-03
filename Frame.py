@@ -19,6 +19,7 @@ root.config(menu = root_menu)
 
 def folderSelect():
     file_path = filedialog.askdirectory()
+    return file_path
 
 def exit_prog():
     sys.exit()
@@ -31,7 +32,7 @@ button_frame = tk.Frame(root)
 button_frame.pack(fill=tk.X, side=tk.BOTTOM)
 
 select_button = tk.Button(button_frame, text='Select Folder', command=folderSelect)
-run_button = tk.Button(button_frame, text='Run', command=TSRemove)
+run_button = tk.Button(button_frame, text='Run', command=lambda TSRemove(file_path))
 
 button_frame.columnconfigure(0, weight=1)
 button_frame.columnconfigure(1, weight=1)
